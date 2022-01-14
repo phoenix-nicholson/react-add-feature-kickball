@@ -40,8 +40,8 @@ INSERT INTO teams (name, city, state)
    | Action | Policy                             | Description                                |
    | ------ | ---------------------------------- | ------------------------------------------ |
    | READ   | `true`                             | Enable read access to all users            |
-   | INSERT | `role() = 'authenticated'::text)`  | Enable insert for authenticated users only |
-   | DELETE | `role() = 'authenticated'::text)`  | Enable delete for authenticated users only |
+   | INSERT | `(role() = 'authenticated'::text)` | Enable insert for authenticated users only |
+   | DELETE | `(role() = 'authenticated'::text)` | Enable delete for authenticated users only |
    | UPDATE | `(role() = 'authenticated'::text)` | Enable update for authenticated users only |
 
 _Note, supabase policies can be done with a `check` or a `using` expression -- for the update to work, it needs to be on the `using` expression. See [here](https://github.com/supabase/supabase-js/issues/26#issuecomment-968882366) for details._
